@@ -1,6 +1,6 @@
 # Flicks
 
-**Name of your app** shows the latest movies currently playing in theaters. The app utilizes the Movie Database API to display images and basic information about these movies to the user.
+**Flicks** shows the latest movies currently playing in theaters. The app utilizes the Movie Database API to display images and basic information about these movies to the user.
 
 Time spent: **X** hours spent in total
 
@@ -30,6 +30,11 @@ The following **bonus** features are implemented:
     * [ ] Less popular videos rely on the detail page should show ratings and a YouTube preview.
 * [ ] Apply the popular [Butterknife annotation library](http://guides.codepath.com/android/Reducing-View-Boilerplate-with-Butterknife) to reduce boilerplate code.
 * [ ] Apply rounded corners for the poster or background images using [Picasso transformations](https://guides.codepath.com/android/Displaying-Images-with-the-Picasso-Library#other-transformations)
+* [ ] Add Persitence 
+* [ ] Add Fragments to display the Top 10 movies, Now Playing and Coming Soon 
+* [ ] Add the option to search movies
+* [ ] Add the option to find the Nearest Cinemas in the Radius 
+
 
 The following **additional** features are implemented:
 
