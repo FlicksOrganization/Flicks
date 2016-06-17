@@ -13,6 +13,13 @@ public class Movie {
     String posterPath;
     String posterTitle;
     String overView;
+    String backdropPath;
+
+    public String getBackdropPath() {
+        return String.format("https://image.tmdb.org/t/p/w342/"+ backdropPath);
+    }
+
+
 
     public String getPosterPath() {
         return String.format("https://image.tmdb.org/t/p/w342/"+ posterPath) ;
@@ -35,6 +42,7 @@ public class Movie {
             this.posterPath = jsonObject.getString("poster_path");
             this.posterTitle = jsonObject.getString("original_title");
             this.overView = jsonObject.getString("overview");
+            this.backdropPath =jsonObject.getString("backdrop_path");
         } catch (JSONException e) {
             e.printStackTrace();
         }

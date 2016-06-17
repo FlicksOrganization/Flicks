@@ -14,17 +14,23 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by gaetanejulmiste on 6/15/16.
  */
 public class MovieArrayAdapter extends ArrayAdapter<Movie>{
 
 
-    private static class ViewHolder {
-        ImageView ivImage ;
-        TextView tvTitle ;
-        TextView tvOverview ;
-
+    public static class ViewHolder {
+         // ImageView ivImage ;
+        //TextView tvTitle ;
+        //TextView tvOverview ;
+        @BindView(R.id.ivImage)  ImageView ivImage ;
+        @BindView(R.id.tvDescription) TextView tvTitle ;
+        @BindView(R.id.tvOverview) TextView tvOverview ;
+        @BindView(R.id.ivBackDrop) ImageView iBackdrop ;
 
     }
 
@@ -37,13 +43,17 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
     public View getView(int position, View convertView, ViewGroup parent) {
         Movie movie = getItem(position);
         ViewHolder viewHolder;
+
         if (convertView == null){
             viewHolder = new ViewHolder();
             LayoutInflater inflater =LayoutInflater.from(getContext());
             convertView= inflater.inflate(R.layout.item_movie,parent,false);
+
             viewHolder.ivImage = (ImageView) convertView.findViewById(R.id.ivImage);
             viewHolder.tvTitle = (TextView) convertView.findViewById(R.id.tvDescription);
             viewHolder.tvOverview = (TextView) convertView.findViewById(R.id.tvOverview);
+            viewHolder.iBackdrop = (ImageView) convertView.findViewById(R.id.ivBackDrop);
+
            convertView.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) convertView.getTag();
@@ -51,6 +61,8 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
 
         viewHolder.tvTitle.setText(movie.getPosterTitle());
         viewHolder.tvOverview.setText(movie.getOverView());
+        //viewHolder.ivImage.setImageResource(0);
+        //viewHolder.iBackdrop.setImageResource(0);
 
       /*
       ImageView ivImage = (ImageView) convertView.findViewById(R.id.ivImage);
@@ -61,8 +73,9 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
         tvOverview.setText(movie.getOverView());
         */
         Picasso.with(getContext()).load(movie.getPosterPath()).into(viewHolder.ivImage);
+        //Picasso.with(getContext()).load(movie.getBackdropPath()).into(viewHolder.iBackdrop);
 
-
+        ButterKnife.bind(convertView);
         return convertView;
     }
 }

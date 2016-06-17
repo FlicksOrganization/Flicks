@@ -34,6 +34,7 @@ The following **bonus** features are implemented:
 * [ ] Add Fragments to display the Top 10 movies, Now Playing and Coming Soon 
 * [ ] Add the option to search movies
 * [ ] Add the option to find the Nearest Cinemas in the Radius 
+* [ ] Check Network Availability
 
 
 The following **additional** features are implemented:
