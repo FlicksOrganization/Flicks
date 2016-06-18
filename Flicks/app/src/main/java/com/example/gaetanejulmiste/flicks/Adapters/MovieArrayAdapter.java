@@ -1,6 +1,7 @@
 package com.example.gaetanejulmiste.flicks.Adapters;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,7 @@ import butterknife.ButterKnife;
 /**
  * Created by gaetanejulmiste on 6/15/16.
  */
-public class MovieArrayAdapter extends ArrayAdapter<Movie>{
+public class MovieArrayAdapter extends ArrayAdapter<Movie> {
 
 
     public static class ViewHolder {
@@ -72,7 +73,16 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
         tvTitle.setText(movie.getPosterTitle());
         tvOverview.setText(movie.getOverView());
         */
-        Picasso.with(getContext()).load(movie.getPosterPath()).into(viewHolder.ivImage);
+        int orientation;
+        orientation = getContext().getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_PORTRAIT){
+            Picasso.with(getContext()).load(movie.getPosterPath()).into(viewHolder.ivImage);
+        }else if (orientation==Configuration.ORIENTATION_LANDSCAPE){
+            Picasso.with(getContext()).load(movie.getBackdropPath()).into(viewHolder.iBackdrop);
+        }
+
+
+        //Picasso.with(getContext()).load(movie.getPosterPath()).into(viewHolder.ivImage);
         //Picasso.with(getContext()).load(movie.getBackdropPath()).into(viewHolder.iBackdrop);
 
         ButterKnife.bind(convertView);
