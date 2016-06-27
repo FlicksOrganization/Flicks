@@ -2,6 +2,7 @@ package com.example.gaetanejulmiste.flicks.Adapters;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
