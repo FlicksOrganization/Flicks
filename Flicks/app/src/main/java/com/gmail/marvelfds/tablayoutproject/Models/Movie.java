@@ -1,5 +1,8 @@
-package com.example.gaetanejulmiste.flicks.Models;
+package com.gmail.marvelfds.tablayoutproject.Models;
 
+/**
+ * Created by gaetanejulmiste on 6/30/16.
+ */
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -54,7 +57,7 @@ public class Movie {
         ArrayList<Movie> results = new ArrayList<>();
         for (int i=0; i< array.length();i++){
             try {
-              results.add(new Movie(array.getJSONObject(i)));
+                results.add(new Movie(array.getJSONObject(i)));
 
             } catch (JSONException e) {
                 e.printStackTrace();
